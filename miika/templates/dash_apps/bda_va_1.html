@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+{% block header %}
+{% load plotly_dash %}
+{% plotly_header %}
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            {%plotly_direct name="bda_va_1"%}
+        </div>
+    </div>
+</div>
+<div class="container px-4">
+    <div class="row mb-2">
+        <div class="col-md-12">
+            <h1>Assignment 1</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <p>Create a graph like the one on the right from the dataset provided</p>
+            <p>Freedom to choose the tool. Extra points from Python.</p>
+            <a href="{% static 'dash_apps/bda_va_1/gdp_data_for_countries.csv' %}" download="gdp_data_for_countries.csv" class="btn btn-info my-4">Download dataset (CSV)</a>
+            <br>
+            <a href="https://colab.research.google.com/drive/1q8UHEhM5oDR15OJixJTc9Yrl7f8W2B-e?usp=sharing" class="btn btn-danger my-4" target="_blank">
+                <img src="{% static 'colab_logo.png' %}" alt="inteded result" class="img-fluid" width="30">
+                Open in Google Colab
+            </a>
+        </div>
+        <div class="col-md-6">
+            <img src="{% static 'dash_apps/bda_va_1/intended_result.png' %}" alt="inteded result" class="img-fluid">
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col-md-12">
+            <h2>Code</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <img src="{% static 'dash_apps/bda_va_1/make_dataset_img.png' %}" alt="make_dataset_img" class="img-fluid">
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                <div class="card-header">Data</div>
+                <div class="card-body">
+                  <h4 class="card-title">Cleaning</h4>
+                  <p class="card-text">
+                    Some row, column and index changes needed.
+                    Using date type column would be improvement.
+                    Not using deprecated df.applymap() method would be clever.
+                </p>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <img src="{% static 'dash_apps/bda_va_1/plotter_img.png' %}" alt="make_dataset_img" class="img-fluid">
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
+                <div class="card-header">Plotting</div>
+                <div class="card-body">
+                  <h4 class="card-title">Verbose</h4>
+                  <p class="card-text">
+                    Quite a lot if happening here.
+                    It is nice to be able to use Plotly Express only, but doing things with Graph Objects might sometimes be prettier.
+                    <br>
+                    I like it that everything can be interactive.
+                    Here it is only the <em class="text-warning">countries</em> variable that is used.
+                </p>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block afterbody %}
+{% plotly_footer %}
+{% endblock %}
