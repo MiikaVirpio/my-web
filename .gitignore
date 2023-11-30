@@ -4,3 +4,4 @@ venv/
 tmp/
 app.py
 db.sqlite3
+.env
