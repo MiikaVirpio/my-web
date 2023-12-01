@@ -1,13 +1,58 @@
 <!DOCTYPE HTML>
 <html>
+    {% load static %}
     <head>
-        <title>Miika</title>
+        <title>Miika Virpiö</title>
         {% load django_bootstrap5 %}
         {% bootstrap_css %}
         {% bootstrap_javascript%}
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
         {% block header%}{% endblock%}
     </head>
     <body>
+        <nav class="navbar navbar-expand-sm bg-dark" data-bs-theme="dark">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <i class="fa-solid fa-robot"></i>
+                    Miika Virpiö
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Chat</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">CV</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Services</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
+                            <div class="dropdown-menu">
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Notebooks</a>
+                            <div class="dropdown-menu">
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Visuals</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/dash-apps/bda-va-1">BDA VA 1</a>
+                            </div>
+                        </li>
+                    </ul>
+              </div>
+            </div>
+          </nav>
         <main>
             <div class="container">
               {% block content%}{% endblock%}

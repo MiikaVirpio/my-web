@@ -1,7 +1,46 @@
 {%extends "base.html"%}
-{%block header%}{%endblock%}
+{% load static %}
 {%block content%}
-<div class="text-center">
-    <h1 class="pt-5">Miika Virpiö</h1>
+<div class="container text-center">
+    <div class="row py-5">
+        <div class="col-sm-12">
+            <h1 class="display-1">Miika Virpiö</h1>
+            <h2 class="display-7"><em>Learning like a Machine</em></h2>
+        </div>
+    </div>
+    <div class="row avatar">
+        <div class="col-sm-6 px-5 py-2">
+            <img src="{%static "Miika_Virpio.jpg" %}" class="img-fluid rounded-circle" alt="Miika Virpiö">
+        </div>
+        <div class="col-sm-6 px-5 py-2">
+            <img src="{%static "KaneliMon.jpg" %}" class="img-fluid rounded-circle" alt="KaneliMon">
+        </div>
+    </div>
+    <div class="row py-5">
+        <div class="col-sm-12 socialicons">
+            <a href="https://github.com/MiikaVirpio" target="_blank">
+                <i class="fa-brands fa-github m-2"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/miikavirpio/" target="_blank">
+                <i class="fa-brands fa-linkedin m-2"></i>
+            </a>
+            <a href="https://www.instagram.com/miikavirpio/" target="_blank">
+                <i class="fa-brands fa-instagram m-2"></i>
+            </a>
+            <a href="https://discordapp.com/users/kanelimon" target="_blank">
+                <i class="fa-brands fa-discord m-2"></i>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <p>I used to be a farmer. Don't believe me? Watch my hip hop music video.</p>
+    </div>
+    <div class="row justify-content-center mb-5">
+        <div class="col-sm-10">
+            <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/89rGI1c2BN4?si=PQU6Vnj3gOvG0POk&cc_lang_pref=en&cc_load_policy=1" title="LeipuriMiika - Bugeja Mun Koodis" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
 </div>
 {%endblock%}

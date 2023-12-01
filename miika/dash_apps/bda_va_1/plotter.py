@@ -1,5 +1,6 @@
 import plotly.express as px
-import plotly.graph_objects as go
+import plotly.io as pio
+
 
 def gdp_plot(df, countries):
     # Subset by the selection of countries
@@ -9,6 +10,7 @@ def gdp_plot(df, countries):
         dff,
         x=df.index,
         y=dff.columns,
+        template=pio.templates["VAPOR"],
     )
     # Markers in the end of the line
     for country in countries:

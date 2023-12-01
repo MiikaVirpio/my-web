@@ -1,4 +1,3 @@
-import mimetypes
 from django.shortcuts import render
 
 from miika.dash_apps.bda_va_1 import dash_launcher

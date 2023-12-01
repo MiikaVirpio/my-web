@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static %}s
 {% block header %}
 {% load plotly_dash %}
 {% plotly_header %}
@@ -15,18 +15,21 @@
 <div class="container px-4">
     <div class="row mb-2">
         <div class="col-md-12">
-            <h1>Assignment 1</h1>
+            <h1>Visualization: Assignment 1</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6">
             <p>Create a graph like the one on the right from the dataset provided</p>
             <p>Freedom to choose the tool. Extra points from Python.</p>
-            <a href="{% static 'dash_apps/bda_va_1/gdp_data_for_countries.csv' %}" download="gdp_data_for_countries.csv" class="btn btn-info my-4">Download dataset (CSV)</a>
-            <br>
-            <a href="https://colab.research.google.com/drive/1q8UHEhM5oDR15OJixJTc9Yrl7f8W2B-e?usp=sharing" class="btn btn-danger my-4" target="_blank">
-                <img src="{% static 'colab_logo.png' %}" alt="inteded result" class="img-fluid" width="30">
+            <a href="{% static 'dash_apps/bda_va_1/gdp_data_for_countries.csv' %}" download="gdp_data_for_countries.csv" class="btn btn-info my-2">Download dataset (CSV)</a><br>
+            <a href="https://colab.research.google.com/drive/1q8UHEhM5oDR15OJixJTc9Yrl7f8W2B-e?usp=sharing" class="btn btn-danger my-2" target="_blank">
+                <img src="{% static 'colab_logo.png' %}" alt="Colab logo" class="img-fluid" width="30">
                 Open in Google Colab
+            </a><br>
+            <a href="https://github.com/MiikaVirpio/my-web/tree/main/miika/dash_apps/bda_va_1" class="btn btn-success my-2" target="_blank">
+                <img src="{% static 'github_logo.png' %}" alt="GitHub logo" class="img-fluid" width="30">
+                Read code at GitHub
             </a>
         </div>
         <div class="col-md-6">
@@ -66,11 +69,12 @@
                 <div class="card-body">
                   <h4 class="card-title">Verbose</h4>
                   <p class="card-text">
-                    Quite a lot if happening here.
-                    It is nice to be able to use Plotly Express only, but doing things with Graph Objects might sometimes be prettier.
+                    Quite a lot is happening here.
+                    It is nice to be able to use Plotly Express only,
+                    but doing things with Graph Objects might sometimes be prettier.
                     <br>
-                    I like it that everything can be interactive.
-                    Here it is only the <em class="text-warning">countries</em> variable that is used.
+                    I like it that every parameter can be set interactive.
+                    Here it is only the <em class="text-warning">countries</em> variable that is used for interactivity.
                 </p>
                 </div>
               </div>
