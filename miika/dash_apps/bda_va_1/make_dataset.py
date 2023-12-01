@@ -16,5 +16,5 @@ def gdp_dataset():
     # Convert to float values
     df = df.astype(float)
     # Apply lambda function to convert values to billions
-    df = df.map(lambda x: np.round(x / 1e9, 0) if pd.notnull(x) else None) # type: ignore
+    df = df.applymap(lambda x: np.round(x / 1e9, 0) if pd.notnull(x) else None) # type: ignore
     return df
