@@ -6,7 +6,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY','django-insecure-8gjkn)48(z5-9ur1g1=n
 
 DEBUG = os.getenv('DJANGO_DEBUG', 'True').lower() in ('true', '1', 't')
 
-ALLOWED_HOSTS = ['virpio.fi', 'miika.virpio.fi', 'www.miika.virpio.fi', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['virpio.fi', 'miika.virpio.fi', 'www.miika.virpio.fi','bqnbebw.cluster030.hosting.ovh.net' , 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',

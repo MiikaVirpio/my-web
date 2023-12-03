@@ -3,9 +3,9 @@ from django_plotly_dash import DjangoDash
 import dash_bootstrap_components as dbc
 import plotly.io as pio
 # Old python on server
-#from importlib_resources import files
+from importlib_resources import files
 # Fresh python local. Comment for server.
-from importlib.resources import files
+#from importlib.resources import files
 
 
 def make_dash_app(name):

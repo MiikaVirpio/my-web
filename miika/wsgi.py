@@ -9,9 +9,9 @@ https://docs.djangoproject.com/en/4.2/howto/deployment/wsgi/
 
 import os
 
-if os.getenv('OVH_APP_ENGINE_VERSION', None):
-    this_file = "venv/bin/activate_this.py"
-    exec(open(this_file).read(), {'__file__': this_file})
+# Comment out for local
+this_file = "venv/bin/activate_this.py"
+exec(open(this_file).read(), {'__file__': this_file})
 
 from django.core.wsgi import get_wsgi_application
 
