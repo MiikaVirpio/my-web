@@ -9,6 +9,7 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("dash-apps/bda-va-1", views.dash_app_bda_va_1, name="dash_app_bda_va_1"),
     path("dash-apps/bda-va-2", views.dash_app_bda_va_2, name="dash_app_bda_va_2"),
+    path("dash-apps/bda-va-4", views.dash_app_bda_va_4, name="dash_app_bda_va_4"),
     path('admin/', admin.site.urls),
     path('django_plotly_dash/', include('django_plotly_dash.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

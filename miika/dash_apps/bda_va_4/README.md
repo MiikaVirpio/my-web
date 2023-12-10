@@ -1,8 +1,14 @@
-# ✨Visualization: Assignment 4 NOT READY
+# ✨Visualization: Assignment 4
 
-NOT READY
+Given CSV data for data access permissions, how can you visualize data? I went for heatmap having text labels of permissions. There is a lot of combinations:
 
-[Visualization at live site](https://miika.virpio.fi/dash-apps/bda-va-2)
+$$ comb = Emp^2Perm! $$
+
+where employee matrix cells are all possible combination of permissions between the employees. In our test data case:
+
+$$ 10^2*3*2*1$$
+
+[Visualization at live site](https://miika.virpio.fi/dash-apps/bda-va-4)
 
 ## Code brakedown
 

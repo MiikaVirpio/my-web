@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}s
+{% block header %}
+{% load plotly_dash %}
+{% plotly_header %}
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            {%plotly_direct name="bda_va_4"%}
+        </div>
+    </div>
+</div>
+<div class="container px-4">
+    <div class="row mb-2">
+        <div class="col-md-12">
+            <h1>Visualization: Assignment 4</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>Given a csv dataset in format <em class="text-success">from, to, permission, yes/no</em>,
+            figure out a best way to visualize permissions person to person.</p>
+            <a href="{% static 'dash_apps/bda_va_4/data_permissions.csv' %}" download="data_permissions.csv" class="btn btn-info my-2">Download dataset (csv)</a><br>
+            <a href="https://colab.research.google.com/drive/1BLRaeI2qDkXOuT8MQaMaJciHKGaqgUWI?usp=sharing" class="btn btn-danger my-2" target="_blank">
+                <img src="{% static 'colab_logo.png' %}" alt="Colab logo" class="img-fluid" width="30">
+                Open in Google Colab
+            </a><br>
+            <a href="https://github.com/MiikaVirpio/my-web/tree/main/miika/dash_apps/bda_va_4" class="btn btn-success my-2" target="_blank">
+                <img src="{% static 'github_logo.png' %}" alt="GitHub logo" class="img-fluid" width="30">
+                Read code at GitHub
+            </a>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col-md-12">
+            <h2>Code</h2>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <img src="{% static 'dash_apps/bda_va_4/make_dataset.png' %}" alt="Make dataset image" class="img-fluid">
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                <div class="card-header">Data</div>
+                <div class="card-body">
+                  <h4 class="card-title">Stretching</h4>
+                  <p class="card-text">
+                    All kinds of funny things, some of them propably useless, but fun to learn.
+                    I tried to make it as general as possible, but ofc there is hardcoded list sizes left.
+                    <br><br>
+                    Interesting thing is that the resulted dataframe fully printed is a usable matrix of permissions.
+                  </p>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <img src="{% static 'dash_apps/bda_va_4/plotter.png' %}" alt="Plotter code" class="img-fluid">
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
+                <div class="card-header">Plot</div>
+                <div class="card-body">
+                  <h4 class="card-title">X Y Z</h4>
+                  <p class="card-text">
+                    The resulted heatmap would be so nice to see with more employees and more permissions.
+                    I like the custom colorscale here. Maybe that could be a helper function for future,
+                    or even inject that to plotly during init for easier usage (like I do with pio.templates).
+                  </p>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block afterbody %}
+{% plotly_footer %}
+{% endblock %}
