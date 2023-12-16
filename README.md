@@ -4,4 +4,4 @@ This is the source code for
 
 ### [miika.virpio.fi](https://miika.virpio.fi)
 
-It is a lean Django app where I post material to showcase everything I do, code and otherwise.
+It is a lean Django app where I post material to showcase things I do, code and otherwise.

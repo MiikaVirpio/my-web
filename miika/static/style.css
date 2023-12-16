@@ -19,3 +19,23 @@ transform: scale(1.1);
     transition: all 0.2s;
     filter: drop-shadow(0 0 20px rgba(145, 255, 240, 0.418))
 }
+
+/* restyle radio items */
+.btn-group .form-check {
+    padding-left: 0;
+}
+
+.btn-group > .form-check:not(:last-child) > .btn {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.btn-group > .form-check:not(:first-child) > .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: -1px;
+}
+
+.thick-btn {
+    min-height: 4rem;
+}

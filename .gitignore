@@ -5,3 +5,5 @@ tmp/
 app.py
 db.sqlite3
 .env
+inderes-stock-comparison-*
+va_project_*

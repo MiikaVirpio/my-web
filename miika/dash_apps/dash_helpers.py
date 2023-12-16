@@ -7,6 +7,15 @@ from importlib_resources import files
 # Fresh python local. Comment for server.
 #from importlib.resources import files
 
+VAPOR_SEQUENCE = [
+    "#6F42C1",
+    "#EA39B8",
+    "#3CF281",
+    "#1BA2F6",
+    "#FFC107",
+    "#E44C55",
+    "#44D9E8",
+]
 
 def make_dash_app(name):
     """Create a DjangoDash app with the given name and return a DjangoDash object.

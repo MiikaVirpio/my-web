@@ -3,6 +3,7 @@ from django.shortcuts import render
 from miika.dash_apps.bda_va_1 import dash_launcher
 from miika.dash_apps.bda_va_2 import dash_launcher
 from miika.dash_apps.bda_va_4 import dash_launcher
+from miika.dash_apps.bda_va_project import dash_launcher
 
 
 def index(request):
@@ -16,3 +17,6 @@ def dash_app_bda_va_2(request):
 
 def dash_app_bda_va_4(request):
     return render(request, 'dash_apps/bda_va_4.html')
+
+def dash_app_bda_va_project(request):
+    return render(request, 'dash_apps/bda_va_project.html')

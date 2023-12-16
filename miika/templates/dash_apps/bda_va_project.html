@@ -1,0 +1,252 @@
+{% extends "base.html" %}
+{% load static %}s
+{% block header %}
+{% load plotly_dash %}
+{% plotly_header %}
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row mb-2">
+        <div class="col-md-12">
+            <h1>Visual Analytics OMXH Project 4DISS</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            {%plotly_direct name="bda_va_project"%}
+        </div>
+    </div>
+</div>
+<div class="container px-4">
+    <div class="row mb-2">
+        <div class="col-md-12">
+            <h1>Visualization Project ✨</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                I have always been facinated about looking aggregated data through an abstraction layer and especially in stock screening I have always tried so see that something that hides in plain sight. 
+                While column calculations in a table and then ordering rows by the column indicator is powerful, I have never quite found Excel, or even PowerBI by extent, intuitive enough. 
+                With newfound love for DataFrames, due all the studies in machine learning and data science, meeting visualization assignment to create a dashboard, the result of the confluence of interests is visible above!
+            </p>
+            <p>
+                It might be easy to publish your data fiddling ideas as a Google Colab Jupyter Notebook, but its only selected audience who benefit from that ultimate interactivity of being able to copy and change code. 
+                With enough Excel-fu, one might be able to share a sheet with few graphs and some interactivity, but there is that limit where you can go with that. 
+                It is certainly not the easiest way to share a dashboard essentially developing a standalone app for it. 
+                I am however, constantly surprised how fast the Dash javascript engine updates the visuals on screen and the underlying Plotly Python is speaking fluently the same language as my creativity.
+            </p>
+            <p>
+                I designed the page not only to satisfy my Visual Analytics teacher for assignment, but to be of real value in my own stock screening and invesing. 
+                Moreover, if I can, by sharing it publicly, spark even one idea in someone else that proves financially valuable to them eventually, my job is done. 
+                Hopefully it works as it does now atleast until something changes at Inderes or yfinance. 
+                Being an uncurable generalist/multipotentialite I will most propably be interested about learning something new already tomorrow.
+            </p>
+            <p>
+                The page should be quite unbreakable, use it liberally, theres no trackers or ads or anything. 
+                The code is open, free and publicly available in GitHub (button below). 
+                Use it, steal it, host it, enhance it - and throw a shoutout at GitHub or LinkedIn if you feel like it!
+            </p>
+            <p>
+                Miika
+            </p>
+            <a href="https://github.com/MiikaVirpio/my-web/tree/main/miika/dash_apps/bda_va_project" class="btn btn-success my-2" target="_blank">
+                <img src="{% static 'github_logo.png' %}" alt="GitHub logo" class="img-fluid" width="30">
+                Code at GitHub
+            </a>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col-md-12">
+            <h2>Input manipulation</h2>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <img src="{% static 'dash_apps/bda_va_project/dash_launcher.png' %}" alt="" class="img-fluid">
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                <div class="card-header">Dash</div>
+                <div class="card-body">
+                  <h4 class="card-title">Input manipulation</h4>
+                  <p class="card-text">
+                    I love it how slim the main runtime of Dash app has become with 4 step process of 
+                    <em class="text-warning">Dash init -> Dataset fetch -> App layout -> Plotting in callbacks.</em>
+                    <br><br>
+                    This time the mind blowing magic was using same input field, the main company dropdown selection, as input to multiple plots and then having that field as OUTPUT for the market cap buttons! 
+                    This way, when you click the button, the input selection for the dropdown is changed and all the plots are updated accordingly. 
+                    AblsPlolty fanDashtic!
+                  </p>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col-md-12">
+            <h2>Simple plots</h2>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <img src="{% static 'dash_apps/bda_va_project/simple_plots.png' %}" alt="" class="img-fluid">
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
+                <div class="card-header">Plot</div>
+                <div class="card-body">
+                  <h4 class="card-title">Simple plots</h4>
+                  <p class="card-text">
+                    It is funny, how simple it is to scatter plot with <em class="text-warning">plotly.express</em> 
+                    compared to the interactivity and value the <em class="text-warning">4DISS</em> graph brings! 
+                    I did use quite a lot of time to try to affect the sizes, opacities and colours of the bubbles in the graph. 
+                    While it would be possible with <em class="text-warning">graph_objects</em> the plotting code would be considerably more complicated. 
+                    I would know because thats what I did first!
+                    <br><br>
+                    The oneliner timeseries query from <em class="text-warning">DataFrame</em> beats many other ways to get data but I cannot stop thinking, 
+                    how production scale implementation of this would be better with well structured databases updating themselves from market APIs in the bacground 
+                    and I would just have tiny api call to my my own DB to get what I want.
+                  </p>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col-md-12">
+            <h2>Not so simple plot</h2>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <img src="{% static 'dash_apps/bda_va_project/trader_plot.png' %}" alt="" class="img-fluid">
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+                <div class="card-header">Plot</div>
+                <div class="card-body">
+                    <h4 class="card-title">Not so simple plot</h4>
+                    <p class="card-text">
+                      While the first plots were simple to craft, this does not atleast look like it. 
+                      However, if you take a step back, there is not actually much other than subplot positioning happening. 
+                      Only things a bit more complicated are the technical indicators I had in my backpocket created for another assignment previously.
+                    </p>    
+                    <p class="text-warning">Larry William’s %R</p>
+                    <p class="math">\( (H_n − C_t)/(H_n − L_n)\times100 \)</p>
+                    <p class="text-warning">Stochastic %K</p>
+                    <p class="math">\( \frac{(C_t − L_n)}{(H_n − L_n)}\times100 \)</p>
+                    <p class="text-warning">Stochastic %D</p>
+                    <p class="math">\( \sum\nolimits_{i=0}^{n-1}\frac{\%K_{t-i}}n \)</p>
+                    <p class="text-warning">RSI</p>
+                    <p class="math">\( 100-\frac{100}{\left(1+\frac{\frac{\sum_{i=0}^{n-1}Up_{t-i}}{\text{n}}}{\frac{\sum_{i=0}^{n-1}Dw_{t-i}}{\text{n}}}\right)} \)</p>
+                    <p>Where:</p>
+                    <ul>
+                        <li>\( H_n \): The highest price reached during the specified period \( n \).</li>
+                        <li>\( C_t \): The closing price at time \( t \).</li>
+                        <li>\( L_n \): The lowest price reached during the specified period \( n \).</li>
+                    </ul>
+                    <p>
+                        There is, by the way, a library <em class="text-warning">pandas-ta</em> offering a bunch of handy ways to create trading indicators, 
+                        that you might be interested, if you are still reading this far.
+                    </p>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col-md-12">
+            <h2>Inderes</h2>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <img src="{% static 'dash_apps/bda_va_project/inderes_dataset.png' %}" alt="" class="img-fluid">
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
+                <div class="card-header">Data</div>
+                <div class="card-body">
+                  <h4 class="card-title">Inderes</h4>
+                  <p class="card-text">
+                    For the main stuff we trust to the top dog Finnish analysts at Inderes! Luckily they provide a downloadable csv. 
+                    It is not every company in the market and on top there is some companies trading in SEK followed as well so in truth our selection of companies is subset from Inderes's subset.
+                    <br><br>
+                    I do not know how often Inderes actually updates the csv. 
+                    Filename downloaded from their website has date in it. 
+                    Maybe file metadata would reveal it. On their site you can see when the recommendation was updated, 
+                    I highly recommend their site. 
+                    <a href="https://www.inderes.fi/stock-comparison" target="_blank">
+                    Go there, now.
+                    </a>
+                    <br><br>
+                    As you can see I am using the non-adjusted 2023 values. 
+                    You would do well to trust only numbers you calculate yourself from annual/quarterly reports. 
+                    This dataset/visualization is for patterns, not for specifics.
+                  </p>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col-md-12">
+            <h2>YFinance</h2>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <img src="{% static 'dash_apps/bda_va_project/yfinance_dataset.png' %}" alt="" class="img-fluid">
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                <div class="card-header">Data</div>
+                <div class="card-body">
+                  <h4 class="card-title">YFinance</h4>
+                  <p class="card-text">
+                    Getting stuff from yfinance is boringly easy. 
+                    I tried to do something fancy with Nasdaq Data Link and Quandl, but nothing comes close to <em class="text-warning">yfinance</em>. 
+                    Remember, it has nothing to do with Yahoo and intended for personal use only. 
+                    Kudos to Ran Aroussi and their yfinance 
+                    <a href="https://github.com/ranaroussi/yfinance" target="_blank">
+                    community at GitHub
+                    </a> 
+                    🙏
+                  </p>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col-md-12">
+            <h2>Merge</h2>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <img src="{% static 'dash_apps/bda_va_project/final_dataset.png' %}" alt="" class="img-fluid">
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
+                <div class="card-header">Data</div>
+                <div class="card-body">
+                  <h4 class="card-title">Merge</h4>
+                  <p class="card-text">
+                    Having defined connections beforehand 
+                    (a list of <em class="text-warning">name:yf_ticker:inders_name</em>, that took hours to craft, no help from LLM 😢) 
+                    it is a breeze to merge columns in using a foreign key-ish trick. 
+                    Downloading prices is amazingly fast having 250 days x 150 companies x OHLC+V. 
+                    I would still be conservative and that's why I store both the companies dataframe and the prices dataframe to a pickle so that data is fetched only once a day.
+                    <br><br>
+                    Thinking about this now during report writing, I could actually grab values from previous pickle and just fetch past few days combining the stuff, instead of getting YTD from scratch everyday. 
+                    Then again, even better would be to update a real DB instead of a pickle or csv file. 
+                    <em class="text-warning">Oh well, maybe next time...</em>
+                  </p>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block afterbody %}
+{% plotly_footer %}
+{% endblock %}
