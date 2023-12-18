@@ -8,7 +8,8 @@ import yfinance as yf
 
 # All companies tracked by Inderes
 # Had to disable this. Too much for server to handle this time
-COMPANIES_ALL = [
+# Scratch that, the problem was weekend data
+COMPANIES = [
     {"name": "Aallon", "yf_ticker": "AALLON.HE", "inderes_name": "Aallon Group"},
     {"name": "Admicom", "yf_ticker": "ADMCM.HE", "inderes_name": "Admicom"},
     {"name": "Administer", "yf_ticker": "ADMIN.HE", "inderes_name": "Administer"},
@@ -165,71 +166,6 @@ COMPANIES_ALL = [
     {"name": "Wulff", "yf_ticker": "WUF1V.HE", "inderes_name": "Wulff Group"},
     {"name": "YIT", "yf_ticker": "YIT.HE", "inderes_name": "YIT Corporation"},
 ]
-COMPANIES = [
-    {"name": "Admicom", "yf_ticker": "ADMCM.HE", "inderes_name": "Admicom"},
-    {"name": "Aktia", "yf_ticker": "AKTIA.HE", "inderes_name": "Aktia Bank"},
-    {"name": "Apetit", "yf_ticker": "APETIT.HE", "inderes_name": "Apetit"},
-    {"name": "Atria", "yf_ticker": "ATRAV.HE", "inderes_name": "Atria A"},
-    {"name": "CapMan", "yf_ticker": "CAPMAN.HE", "inderes_name": "CapMan"},
-    {"name": "Cargotec", "yf_ticker": "CGCBV.HE", "inderes_name": "Cargotec B"},
-    {"name": "Digia", "yf_ticker": "DIGIA.HE", "inderes_name": "Digia"},
-    {"name": "EcoUp", "yf_ticker": "ECOUP.HE", "inderes_name": "EcoUp"},
-    {"name": "Elisa", "yf_ticker": "ELISA.HE", "inderes_name": "Elisa"},
-    {"name": "eQ", "yf_ticker": "EQV1V.HE", "inderes_name": "eQ"},
-    {"name": "Exel Composites", "yf_ticker": "EXL1V.HE", "inderes_name": "Exel Composites"},
-    {"name": "F-Secure", "yf_ticker": "FSECURE.HE", "inderes_name": "F-Secure"},
-    {"name": "Finnair", "yf_ticker": "FIA1S.HE", "inderes_name": "Finnair"},
-    {"name": "Fiskars", "yf_ticker": "FSKRS.HE", "inderes_name": "Fiskars A"},
-    {"name": "Fortum", "yf_ticker": "FORTUM.HE", "inderes_name": "Fortum"},
-    {"name": "Gofore", "yf_ticker": "GOFORE.HE", "inderes_name": "Gofore"},
-    {"name": "Harvia", "yf_ticker": "HARVIA.HE", "inderes_name": "Harvia"},
-    {"name": "Incap", "yf_ticker": "ICP1V.HE", "inderes_name": "Incap"},
-    {"name": "Investors House", "yf_ticker": "INVEST.HE", "inderes_name": "Investors House"},
-    {"name": "Kamux", "yf_ticker": "KAMUX.HE", "inderes_name": "Kamux"},
-    {"name": "Kempower", "yf_ticker": "KEMPOWR.HE", "inderes_name": "Kempower"},
-    {"name": "Kesko", "yf_ticker": "KESKOB.HE", "inderes_name": "Kesko B"},
-    {"name": "Kone", "yf_ticker": "KNEBV.HE", "inderes_name": "Kone B"},
-    {"name": "Kreate", "yf_ticker": "KREATE.HE", "inderes_name": "Kreate Group"},
-    {"name": "Mandatum", "yf_ticker": "MANTA.HE", "inderes_name": "Mandatum"},
-    {"name": "Marimekko", "yf_ticker": "MEKKO.HE", "inderes_name": "Marimekko"},
-    {"name": "Martela", "yf_ticker": "MARAS.HE", "inderes_name": "Martela A"},
-    {"name": "Metsä Board", "yf_ticker": "METSA.HE", "inderes_name": "Metsä Board B"},
-    {"name": "Metso", "yf_ticker": "METSO.HE", "inderes_name": "Metso"},
-    {"name": "Neste", "yf_ticker": "NESTE.HE", "inderes_name": "Neste"},
-    {"name": "NoHo", "yf_ticker": "NOHO.HE", "inderes_name": "NoHo Partners"},
-    {"name": "Nokia", "yf_ticker": "NOKIA.HE", "inderes_name": "Nokia"},
-    {"name": "Nordea", "yf_ticker": "NDA-FI.HE", "inderes_name": "Nordea Bank"},
-    {"name": "OmaSP", "yf_ticker": "OMASP.HE", "inderes_name": "Oma Säästöpankki"},
-    {"name": "Orion", "yf_ticker": "ORNBV.HE", "inderes_name": "Orion B"},
-    {"name": "Orthex", "yf_ticker": "ORTHEX.HE", "inderes_name": "Orthex"},
-    {"name": "Outokumpu", "yf_ticker": "OUT1V.HE", "inderes_name": "Outokumpu"},
-    {"name": "Pihlajalinna", "yf_ticker": "PIHLIS.HE", "inderes_name": "Pihlajalinna"},
-    {"name": "Ponsse", "yf_ticker": "PON1V.HE", "inderes_name": "Ponsse"},
-    {"name": "Puuilo", "yf_ticker": "PUUILO.HE", "inderes_name": "Puuilo"},
-    {"name": "Qt", "yf_ticker": "QTCOM.HE", "inderes_name": "Qt Group"},
-    {"name": "Remedy", "yf_ticker": "REMEDY.HE", "inderes_name": "Remedy Entertainment"},
-    {"name": "Revenio", "yf_ticker": "REG1V.HE", "inderes_name": "Revenio Group"},
-    {"name": "Sampo", "yf_ticker": "SAMPO.HE", "inderes_name": "Sampo A"},
-    {"name": "Sanoma", "yf_ticker": "SANOMA.HE", "inderes_name": "Sanoma"},
-    {"name": "Sitowise", "yf_ticker": "SITOWS.HE", "inderes_name": "Sitowise Group"},
-    {"name": "SRV", "yf_ticker": "SRV1V.HE", "inderes_name": "SRV Group"},
-    {"name": "Stockmann", "yf_ticker": "STOCKA.HE", "inderes_name": "Stockmann"},
-    {"name": "Stora Enso", "yf_ticker": "STEAV.HE", "inderes_name": "Stora Enso R"},
-    {"name": "Taaleri", "yf_ticker": "TAALA.HE", "inderes_name": "Taaleri"},
-    {"name": "Terveystalo", "yf_ticker": "TTALO.HE", "inderes_name": "Terveystalo"},
-    {"name": "Tieto", "yf_ticker": "TIETO.HE", "inderes_name": "Tietoevry"},
-    {"name": "Titanium", "yf_ticker": "TITAN.HE", "inderes_name": "Titanium"},
-    {"name": "Tokmanni", "yf_ticker": "TOKMAN.HE", "inderes_name": "Tokmanni Group"},
-    {"name": "UPM", "yf_ticker": "UPM.HE", "inderes_name": "UPM-Kymmene"},
-    {"name": "Vaisala", "yf_ticker": "VAIAS.HE", "inderes_name": "Vaisala A"},
-    {"name": "Valmet", "yf_ticker": "VALMT.HE", "inderes_name": "Valmet"},
-    {"name": "Verkkokauppa", "yf_ticker": "VERK.HE", "inderes_name": "Verkkokauppa.com"},
-    {"name": "Vincit", "yf_ticker": "VINCIT.HE", "inderes_name": "Vincit"},
-    {"name": "Wärtsilä", "yf_ticker": "WRT1V.HE", "inderes_name": "Wärtsilä B"},
-    {"name": "Witted", "yf_ticker": "WITTED.HE", "inderes_name": "Witted Megacorp"},
-    {"name": "Wulff", "yf_ticker": "WUF1V.HE", "inderes_name": "Wulff Group"},
-    {"name": "YIT", "yf_ticker": "YIT.HE", "inderes_name": "YIT Corporation"},
-]
 # Data we are after from Inderes
 INDERES_COLUMNS = [
     # We take latest price from yfinance
@@ -335,8 +271,8 @@ def stock_data():
         millions = ["revenue_2020", "revenue_2021", "revenue_2022", "revenue_2023", "revenue_2024", 
                     "revenue_2025", "revenue_2026", "ebitda", "mcap", "ev", "volume"]
         df[millions] = np.round(df[millions] / 1000000, 2)
-        # Add yesterdays price to df
-        df["price"] = [prices["Close"][ticker][yesterday] for ticker in df["yf_ticker"]]
+        # Add latest price to df
+        df["price"] = [prices["Close"][ticker].iloc[-1] for ticker in df["yf_ticker"]]
         # Calculate P/E
         df["pe"] = np.round((df["price"] / df["eps"]), 2)
         # Calculate EV/EBITDA
