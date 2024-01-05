@@ -173,13 +173,13 @@ INDERES_COLUMNS = [
     {"df_name": "target", "inderes_name": "Target price"},
     {"df_name": "recommendation", "inderes_name": "Recommendation"},
     {"df_name": "risk", "inderes_name": "Risk level"},
-    {"df_name": "revenue_2020", "inderes_name": "Revenue#2020"},
     {"df_name": "revenue_2021", "inderes_name": "Revenue#2021"},
     {"df_name": "revenue_2022", "inderes_name": "Revenue#2022"},
     {"df_name": "revenue_2023", "inderes_name": "Revenue#2023"},
     {"df_name": "revenue_2024", "inderes_name": "Revenue#2024"},
     {"df_name": "revenue_2025", "inderes_name": "Revenue#2025"},
     {"df_name": "revenue_2026", "inderes_name": "Revenue#2026"},
+    {"df_name": "revenue_2027", "inderes_name": "Revenue#2027"},
     {"df_name": "ebitda", "inderes_name": "EBITDA#2023"},
     {"df_name": "eps", "inderes_name": "EPS#2023"},
     {"df_name": "dividend_ratio", "inderes_name": "Dividend ratio#2023"},
@@ -268,8 +268,8 @@ def stock_data():
         # ~250 rows for year x the companies we have (150) x ohlc+v. For exercise, I think that is a good limit
         prices = yf_data.history(period="1y", interval="1d", actions=False)
         # Own additions and calculations to dataframe
-        millions = ["revenue_2020", "revenue_2021", "revenue_2022", "revenue_2023", "revenue_2024", 
-                    "revenue_2025", "revenue_2026", "ebitda", "mcap", "ev", "volume"]
+        millions = ["revenue_2021", "revenue_2022", "revenue_2023", "revenue_2024", 
+                    "revenue_2025", "revenue_2026", "revenue_2027", "ebitda", "mcap", "ev", "volume"]
         df[millions] = np.round(df[millions] / 1000000, 2)
         # Add latest price to df
         df["price"] = [prices["Close"][ticker].iloc[-1] for ticker in df["yf_ticker"]]
