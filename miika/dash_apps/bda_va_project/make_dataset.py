@@ -251,7 +251,9 @@ def get_yfinance(df):
 def stock_data():
     # Yesterday as isoformat
     yesterday = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
-    DAILY_PICKLE = f"va_project_{yesterday}.pickle"
+    #DAILY_PICKLE = f"va_project_{yesterday}.pickle"
+    # Requires authentication suddenly so reverted to last working on server
+    DAILY_PICKLE = f"va_project_2024-01-11.pickle"
     if Path(DAILY_PICKLE).is_file():
         with open(DAILY_PICKLE, "rb") as f:
             daily = pickle.load(f)
